@@ -1,42 +1,64 @@
-import React from 'react'
+import React from "react";
+import cn from "classnames";
 
-import './Header.scss';
+import LocationCity from "../../components/LocationCity";
 
-import pin from './pin.svg';
-import account from './account.svg';
-import arrow_down from './arrow_down.svg';
-import logo from './logo.svg';
-import cart from './cart.svg';
+import styles from "./Header.module.scss";
+
+import pin from "./pin.svg";
+import account from "./account.svg";
+import arrow_down from "./arrow_down.svg";
+import logo from "./logo.svg";
+import cart from "./cart.svg";
 
 const Header = () => {
   return (
-    <header className='header'>
-      <div className='header__delivery-info'>
-        <div className='delivery-info__location'>
-          <img src={pin} className='location__logo'></img>
-          Москва
+    <header className={styles.header}>
+      <div className={styles.topbar}>
+        <div className="container">
+          <div className={styles.topbar__wrapper}>
+            <LocationCity />
+            <a href="#" className={styles.topbar__info}>
+              Проверить адрес
+            </a>
+            <div className={styles.topbar__info}>
+              Среднее время доставки*: <b>00:24:19</b>
+            </div>
+            <div className={cn(styles.topbar__info, styles.topbar__right)}>
+              Время работы: с 11:00 до 23:00
+            </div>
+            <button className={styles.topbar__login}>
+              <img
+                src={account}
+                className={styles["topbar__login-icon"]}
+                alt="Иконка войти"
+              />
+              Войти в аккаунт
+            </button>
+          </div>
         </div>
-        <a href='#' className='delivery-info__check-location'>Проверить адрес</a>
-        <p className='delivery-info__average-delivery-time'>Среднее время доставки*: <span className='average-delivery-time__actual'>00:24:19</span></p>
-        <p className='delivery-info__work-time'>Время работы: с 11:00 до 23:00</p>
-        <button className='delivery-info__account'>
-          <img src={account} className='account__logo'></img>
-          Войти в аккаунт
-        </button>
       </div>
-      <div className='header__menu'>
-        <div className='menu__logo'>
-          <img src={logo} className='logo__img'></img>
+      <div className={styles.navigation}>
+        <div className={styles.navigation__logo}>
+          <img src={logo} className={styles["logo__img"]} alt="Логотип" />
           Куда пицца
         </div>
-        
-        <button className='menu__cart'>
-          <img src={cart} className='cart__logo'></img>
+
+        <ul className={styles.navigation__menu}>
+          <li className={styles["navigation__menu-item"]}></li>
+        </ul>
+
+        <button className={styles.navigation__cart}>
+          <img
+            src={cart}
+            className={styles["navigation__cart-logo"]}
+            alt="Иконка корзины"
+          />
           0 ₽
         </button>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
