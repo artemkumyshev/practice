@@ -1,0 +1,9 @@
+@import './variables/colors.scss';
+
+body {
+    background-color: $colorGray;
+};
+p {
+    margin: 0;
+    padding: 0;
+}

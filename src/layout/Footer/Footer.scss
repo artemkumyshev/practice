@@ -1,0 +1,70 @@
+@import '../../styles/variables/colors.scss';
+
+.footer {
+    background-color: $colorWhite;
+    padding: 40px 10% 25px 10%;
+    display: flex;
+    justify-content: space-between;
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        
+
+        &-title{
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        };
+
+        &-link {
+            color: $colorBlack;
+            text-decoration: none;
+            
+        };
+
+        &-link:not(:last-child) {
+            margin-bottom: 20px;
+        };
+    };
+    
+}
+
+.logo-copyright {
+    justify-content: space-between;
+};
+
+.column {
+    &__logo {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+    
+        &-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        };
+    };
+}
+
+.link-connection {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $colorBlack;
+
+    img {
+        
+        margin-right: 8px;
+    };
+}
+
+.social-link {
+    display: flex;
+
+    a:not(:last-child) {
+        margin-right: 20px;
+    };
+};
+    
